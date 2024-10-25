@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        :root {
+            /* Primary Colors */
+            --oracle-red: #c41e3a;
+            --border-blue: #99b1d8;
+            --header-bg-start: #dde6f4;
+            --header-bg-end: #c3d3e9;
+            
+            /* Background Colors */
+            --main-bg: #f7f7f7;
+            --content-bg: #ffffff;
+            --nav-bg-start: #e8e8e8;
+            --nav-bg-end: #d0d0d0;
+            
+            /* Border Colors */
+            --border-light: #ccd5e4;
+            --border-dark: #8ca1c4;
+            
+            /* Text Colors */
+            --text-primary: #000000;
+            --text-secondary: #333333;
+            --text-disabled: #666666;
+            
+            /* Input Colors */
+            --input-border: #b3c0d6;
+            --input-bg: #ffffff;
+            --input-bg-disabled: #f0f0f0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--main-bg);
+            font-size: 11px;
+            color: var(--text-primary);
+        }
+
+        .header {
+            background: linear-gradient(to bottom, #f8f8f8, #e6e6e6);
+            padding: 6px 8px;
+            border-bottom: 1px solid #b3b3b3;
+            height: 24px;
+            line-height: 24px;
+        }
+
+        .logo {
+            color: var(--oracle-red);
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .nav-bar {
+            background: linear-gradient(to bottom, var(--nav-bg-start), var(--nav-bg-end));
+            border-bottom: 1px solid var(--border-dark);
+            height: 28px;
+            padding: 0 4px;
+        }
+
+        .case-header {
+            background-color: #e8e8e8;
+            padding: 4px 8px;
+            border: 1px solid var(--border-blue);
+            margin: 4px;
+        }
+
+        .tab-container {
+            background-color: var(--header-bg-start);
+            padding: 4px 4px 0 4px;
+            border: 1px solid var(--border-blue);
+            border-bottom: none;
+        }
+
+        .tab {
+            display: inline-block;
+            padding: 4px 10px;
+            background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+            border: 1px solid var(--border-blue);
+            margin-right: 2px;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .tab.active {
+            background: var(--content-bg);
+            border-bottom-color: var(--content-bg);
+        }
+
+        .main-content {
+            background-color: var(--content-bg);
+            margin: 0 4px;
+            border: 1px solid var(--border-blue);
+            padding: 8px;
+        }
+
+        .section-header {
+            background: linear-gradient(to bottom, var(--header-bg-start), var(--header-bg-end));
+            padding: 4px 8px;
+            border: 1px solid var(--border-blue);
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-container {
+            border: 1px solid var(--border-blue);
+            padding: 8px;
+            margin-bottom: 12px;
+            background-color: var(--content-bg);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 120px 200px 120px 200px;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .form-label {
+            color: var(--text-secondary);
+            font-size: 11px;
+        }
+
+        .required::after {
+            content: "*";
+            color: #ff0000;
+            margin-left: 2px;
+        }
+
+        .form-input {
+            height: 18px;
+            border: 1px solid var(--input-border);
+            padding: 1px 4px;
+            width: calc(100% - 10px);
+            background-color: var(--input-bg);
+        }
+
+        .form-select {
+            height: 22px;
+            border: 1px solid var(--input-border);
+            width: 100%;
+            background-color: var(--input-bg);
+        }
+
+        .button {
+            background: linear-gradient(to bottom, #ffffff, #e6e6e6);
+            border: 1px solid var(--border-blue);
+            padding: 2px 8px;
+            height: 20px;
+            color: var(--text-primary);
+        }
+
+        .grid-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 8px 0;
+        }
+
+        .grid-table th {
+            background: linear-gradient(to bottom, var(--header-bg-start), var(--header-bg-end));
+            border: 1px solid var(--border-blue);
+            padding: 4px;
+            text-align: left;
+            font-weight: normal;
+            color: var(--text-secondary);
+        }
+
+        .grid-table td {
+            border: 1px solid var(--border-blue);
+            padding: 2px;
+            background-color: var(--content-bg);
+        }
+
+        .amendments-header {
+            background: linear-gradient(to bottom, var(--header-bg-start), var(--header-bg-end));
+            padding: 4px 8px;
+            border: 1px solid var(--border-blue);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 4px 12px;
+            border-right: 1px solid #b3b3b3;
+            height: 20px;
+            line-height: 20px;
+            color: var(--text-secondary);
+        }
+
+        .checkbox-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--text-secondary);
+        }
+
+        /* Additional precise styling for specific elements */
+        input[type="checkbox"] {
+            width: 13px;
+            height: 13px;
+            border: 1px solid var(--input-border);
+            background-color: var(--input-bg);
+        }
+
+        select:disabled {
+            background-color: var(--input-bg-disabled);
+            color: var(--text-disabled);
+        }
+
+        .button:hover {
+            background: linear-gradient(to bottom, #f0f0f0, #d9d9d9);
+        }
+
+        .button:active {
+            background: linear-gradient(to bottom, #d9d9d9, #f0f0f0);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            ORACLE Argus Safety
+        </div>
+        <div class="welcome-text">
+            Welcome Faculty, Sunday, October 4, 2020 (ARGUS-DB-DEFAULT)
+        </div>
+    </div>
+    
+    <div class="nav">
+        <button class="nav-button">Active Cases</button>
+        <button class="nav-button">Worklist</button>
+        <button class="nav-button">Case Actions</button>
+        <button class="nav-button">Reports</button>
+        <button class="nav-button">Local Affiliate</button>
+        <button class="nav-button">Utilities</button>
+        <button class="nav-button">Dashboards</button>
+        <button class="nav-button">Argus Console</button>
+    </div>
+
+    <div class="content">
+        <div class="breadcrumb">
+            Home > Personal Argus Status
+        </div>
+
+
+        <div class="quick-launch">
+            <label>Case Quick Launch:</label>
+            <input type="text">
+            <button class="action-button">Open</button>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span>Cases Assigned (2)</span>
+                <span class="collapse">−</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="checkbox-header"><input type="checkbox"></th>
+                        <th>Country/Case Number ▲</th>
+                        <th>Report Type</th>
+                        <th>Product</th>
+                        <th>Workflow State</th>
+                        <th>Event</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td class="case-number">(GB) TR55000884</td>
+                        <td>Sponsored Trial</td>
+                        <td>ABC</td>
+                        <td>Book-In</td>
+                        <td>XYZ</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td class="case-number">(US) TR55000913</td>
+                        <td>Spontaneous</td>
+                        <td>ALPROSTADIL</td>
+                        <td>Book-In</td>
+                        <td>Pyrexia</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span>Contact Log Entries (2)</span>
+                <span class="collapse">−</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="checkbox-header"><input type="checkbox"></th>
+                        <th>Country/Case Number ▲</th>
+                        <th>Contact Date</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td class="case-number">(US) TR55000913</td>
+                        <td>29-NOV-2019</td>
+                        <td>NON-HCP Letter</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td class="case-number">(US) TR55000884</td>
+                        <td>30-NOV-2019</td>
+                        <td>Health Care Professional Letter</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <span>Action Item Entries (0)</span>
+                <span class="collapse">−</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="checkbox-header"><input type="checkbox"></th>
+                        <th>Country/Case Number ▲</th>
+                        <th>Due On</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="icons">
+        <button title="Print"><span>🖨️</span></button>
+        <button title="Help"><span>❓</span></button>
+        <button title="Minimize"><span>▼</span></button>
+    </div>
+</body>
+</html>

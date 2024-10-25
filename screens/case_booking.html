@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            font-size: 11px;
+            color: #333;
+        }
+        .header {
+            background: linear-gradient(to bottom, #ffffff, #e6e6e6);
+            padding: 6px 8px;
+            border-bottom: 1px solid #b3b3b3;
+            height: 24px;
+            line-height: 24px;
+        }
+        .logo {
+            color: #c41e3a;
+            font-weight: bold;
+            font-size: 15px;
+            vertical-align: middle;
+        }
+        .nav-bar {
+            background: linear-gradient(to bottom, #f0f0f0, #d9d9d9);
+            border-bottom: 1px solid #b3b3b3;
+            height: 28px;
+            padding: 0 4px;
+        }
+        .tab-container {
+            background-color: #e6edf7;
+            padding: 4px 4px 0 4px;
+            border: 1px solid #9cb0d1;
+            border-bottom: none;
+        }
+        .tab {
+            display: inline-block;
+            padding: 4px 10px;
+            background: linear-gradient(to bottom, #f5f5f5, #e6e6e6);
+            border: 1px solid #9cb0d1;
+            margin-right: 2px;
+            border-radius: 3px 3px 0 0;
+            cursor: pointer;
+        }
+        .tab.active {
+            background: #fff;
+            border-bottom: 1px solid #fff;
+        }
+        .main-content {
+            background-color: #fff;
+            margin: 0 4px;
+            border: 1px solid #9cb0d1;
+            padding: 8px;
+        }
+        .section-header {
+            background: linear-gradient(to bottom, #e6edf7, #d1deef);
+            padding: 4px 8px;
+            border: 1px solid #9cb0d1;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 20px;
+        }
+        .form-container {
+            border: 1px solid #9cb0d1;
+            padding: 8px;
+            margin-bottom: 12px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 120px 200px 120px 200px;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+        .form-label {
+            color: #333;
+            font-size: 11px;
+        }
+        .required::after {
+            content: "*";
+            color: red;
+            margin-left: 2px;
+        }
+        .form-input {
+            height: 18px;
+            border: 1px solid #9cb0d1;
+            padding: 1px 4px;
+            width: calc(100% - 10px);
+            font-size: 11px;
+        }
+        .form-select {
+            height: 22px;
+            border: 1px solid #9cb0d1;
+            width: 100%;
+            font-size: 11px;
+            padding: 1px;
+        }
+        .grid-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 8px 0;
+        }
+        .grid-table th {
+            background: linear-gradient(to bottom, #e6edf7, #d1deef);
+            border: 1px solid #9cb0d1;
+            padding: 4px;
+            text-align: left;
+            font-weight: normal;
+        }
+        .grid-table td {
+            border: 1px solid #9cb0d1;
+            padding: 2px;
+            height: 24px;
+        }
+        .button {
+            background: linear-gradient(to bottom, #ffffff, #e6e6e6);
+            border: 1px solid #9cb0d1;
+            padding: 2px 8px;
+            height: 20px;
+            cursor: pointer;
+            font-size: 11px;
+            margin: 0 2px;
+        }
+        .checkbox-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .amendments-header {
+            background: linear-gradient(to bottom, #e6edf7, #d1deef);
+            padding: 4px 8px;
+            border: 1px solid #9cb0d1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .case-header {
+            padding: 4px 8px;
+            background-color: #e6e6e6;
+            border: 1px solid #9cb0d1;
+            margin: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-button {
+            display: inline-block;
+            padding: 4px 12px;
+            border-right: 1px solid #b3b3b3;
+            height: 20px;
+            line-height: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="logo">ORACLE</span>
+        <span style="margin-left: 20px">Argus Safety</span>
+        <span style="float: right">Welcome Booklin and Date&time: Sunday, November 1, 2020 [ARGUS SUB-DEFAULT]</span>
+    </div>
+
+    <div class="nav-bar">
+        <div class="nav-button">Active Cases</div>
+        <div class="nav-button">Worklist</div>
+        <div class="nav-button">Case Actions</div>
+        <div class="nav-button">Utilities</div>
+        <div class="nav-button">Dashboards</div>
+    </div>
+
+    <div class="case-header">
+        <span>Case Form - 20US000973</span>
+        <span>Case Status: Lock-In</span>
+    </div>
+
+    <div class="tab-container">
+        <div class="tab active">General</div>
+        <div class="tab">Patient</div>
+        <div class="tab">Products</div>
+        <div class="tab">Events</div>
+        <div class="tab">Analysis</div>
+        <div class="tab">Activities</div>
+        <div class="tab">Additional Information</div>
+        <div class="tab">Regulatory Reports</div>
+    </div>
+
+    <div class="main-content">
+        <div class="section-header">
+            <span>General Information</span>
+            <button class="button">−</button>
+        </div>
+
+        <div class="form-container">
+            <div class="form-row">
+                <span class="form-label required">Report Type</span>
+                <select class="form-select">
+                    <option>Spontaneous</option>
+                </select>
+                <span class="form-label">Country</span>
+                <select class="form-select">
+                    <option>UNITED STATES</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <span class="form-label required">Initial Receipt Date</span>
+                <input type="text" class="form-input" value="31-OCT-2020">
+                <span class="form-label">Central Receipt Date</span>
+                <input type="text" class="form-input" value="02-MAR-2009">
+            </div>
+
+            <div class="form-row">
+                <span class="form-label">Medically Confirm</span>
+                <select class="form-select">
+                    <option>Select...</option>
+                </select>
+                <span class="form-label">Initial Justification</span>
+                <input type="text" class="form-input">
+            </div>
+        </div>
+
+        <div class="form-container">
+            <div class="amendments-header">
+                <span>Amendments / Follow-ups (0)</span>
+                <div>
+                    <button class="button">Add</button>
+                    <button class="button">Delete</button>
+                </div>
+            </div>
+            <table class="grid-table">
+                <tr>
+                    <th>Follow-up Received</th>
+                    <th>Safety Received</th>
+                    <th>Significant</th>
+                    <th>Date Clean Up</th>
+                    <th>Amendment</th>
+                    <th>Amendment / Follow up Justification</th>
+                </tr>
+                <tr>
+                    <td colspan="6"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section-header">
+            <span>Reporter Information (0)</span>
+            <button class="button">Select</button>
+        </div>
+
+        <div class="form-container">
+            <table class="grid-table">
+                <tr>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>Suffix</th>
+                    <th>Health Care Professional</th>
+                    <th>Occupation</th>
+                </tr>
+                <tr>
+                    <td><input type="text" class="form-input" style="width: 95%"></td>
+                    <td><input type="text" class="form-input" style="width: 95%"></td>
+                    <td><input type="text" class="form-input" style="width: 95%"></td>
+                    <td><input type="text" class="form-input" style="width: 95%"></td>
+                    <td>
+                        <select class="form-select" style="width: 95%">
+                            <option>Select...</option>
+                        </select>
+                    </td>
+                    <td><input type="text" class="form-input" style="width: 95%"></td>
+                </tr>
+            </table>
+
+            <div class="form-row">
+                <span class="form-label">Institution</span>
+                <input type="text" class="form-input">
+                <span class="form-label">Department</span>
+                <input type="text" class="form-input">
+            </div>
+
+            <div class="form-row">
+                <span class="form-label">Address 1</span>
+                <input type="text" class="form-input">
+                <span class="form-label">City</span>
+                <input type="text" class="form-input">
+            </div>
+
+            <div class="form-row">
+                <span class="form-label">Address 2</span>
+                <input type="text" class="form-input">
+                <span class="form-label">State</span>
+                <input type="text" class="form-input">
+            </div>
+
+            <div class="form-row">
+                <span class="form-label">Phone Number</span>
+                <input type="text" class="form-input">
+                <span class="form-label">Reporter ID</span>
+                <input type="text" class="form-input">
+            </div>
+
+            <div class="form-row" style="grid-template-columns: 120px 200px auto">
+                <span class="form-label">Email Address</span>
+                <input type="text" class="form-input">
+                <div class="checkbox-container" style="justify-self: end">
+                    <label class="checkbox-label">
+                        <input type="checkbox">
+                        Protect Confidentiality
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox">
+                        Primary Reporter
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox">
+                        Correspondence Contact
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

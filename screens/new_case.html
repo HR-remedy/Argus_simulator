@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .header {
+            background-color: white;
+            padding: 8px 15px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            color: #FF0000;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .welcome-text {
+            font-size: 12px;
+            color: #666;
+        }
+        .top-nav {
+            background: linear-gradient(to bottom, #5B9BD5 0%, #4A8BC2 100%);
+            padding: 4px 8px;
+            border-bottom: 1px solid #2E5B84;
+        }
+        .nav-button {
+            background: none;
+            border: none;
+            color: white;
+            padding: 4px 12px;
+            margin: 0 2px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .breadcrumb {
+            padding: 8px 15px;
+            font-size: 12px;
+            background-color: white;
+            border-bottom: 1px solid #ccc;
+        }
+        .content {
+            padding: 15px;
+            background-color: white;
+        }
+        .page-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .search-criteria {
+            background: linear-gradient(to bottom, #5B9BD5 0%, #4A8BC2 100%);
+            color: white;
+            padding: 6px 10px;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .radio-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-size: 12px;
+        }
+        .section {
+            margin: 15px 0;
+            border: 1px solid #ccc;
+        }
+        .section-header {
+            background-color: #F2F2F2;
+            padding: 5px;
+            font-weight: bold;
+            font-size: 12px;
+            border-bottom: 1px solid #ccc;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .field-label {
+            font-size: 12px;
+            color: #333;
+        }
+        .field-label::before {
+            content: "▼";
+            color: #666;
+            margin-right: 4px;
+            font-size: 10px;
+        }
+        input[type="text"], select {
+            border: 1px solid #ccc;
+            padding: 3px;
+            font-size: 12px;
+            width: 100%;
+        }
+        .required {
+            color: red;
+            margin-left: 2px;
+        }
+        .select-button {
+            background: #E6E6E6;
+            border: 1px solid #999;
+            padding: 2px 8px;
+            font-size: 11px;
+            cursor: pointer;
+        }
+        .footer {
+            padding: 10px;
+            text-align: right;
+            background-color: #F2F2F2;
+            border-top: 1px solid #ccc;
+        }
+        .footer button {
+            margin-left: 10px;
+        }
+        .reporter-grid {
+            display: grid;
+            grid-template-columns: 80px 150px 150px 200px 80px 200px 150px 200px;
+            gap: 5px;
+            padding: 10px;
+        }
+        .patient-grid {
+            display: grid;
+            grid-template-columns: 200px 150px 150px 80px 100px 150px;
+            gap: 5px;
+            padding: 10px;
+        }
+        .literature-grid {
+            display: grid;
+            grid-template-columns: 200px 200px 400px 300px;
+            gap: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">ORACLE Argus Safety</div>
+        <div class="welcome-text">Welcome BookIn and Dataentry, Sunday, November 1, 2020 (ARGUS-DB-DEFAULT)</div>
+    </div>
+
+    <div class="top-nav">
+        <button class="nav-button">Active Cases</button>
+        <button class="nav-button">Worklist</button>
+        <button class="nav-button">Case Actions</button>
+        <button class="nav-button">Utilities</button>
+        <button class="nav-button">Dashboards</button>
+    </div>
+
+    <div class="breadcrumb">
+        Case Actions > New Case
+    </div>
+
+    <div class="content">
+        <div class="page-title">Initial Case Entry</div>
+
+        <div class="search-criteria">
+            <span>Case Search Criteria</span>
+            <div class="radio-group">
+                <input type="radio" id="initial" name="receipt" checked>
+                <label for="initial">Initial Receipt Date</label>
+                <input type="radio" id="range" name="receipt">
+                <label for="range">Receipt Range Limits 01-SEP-2020 - 30-DEC-2020</label>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">General</div>
+            <div class="form-grid">
+                <div class="form-field">
+                    <label class="field-label">Initial Receipt Date</label>
+                    <input type="text" value="01-OCT-2020">
+                </div>
+                <div class="form-field">
+                    <label class="field-label">Central Receipt Date</label>
+                    <input type="text" value="??-???-0000">
+                </div>
+                <div class="form-field">
+                    <label class="field-label">Country</label>
+                    <select>
+                        <option>UNITED STATES</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label class="field-label">Report Type</label>
+                    <input type="text" value="Sponta">
+                </div>
+                <div class="form-field">
+                    <label class="field-label">Project ID</label>
+                    <input type="text">
+                </div>
+                <div class="form-field">
+                    <label class="field-label">Study ID</label>
+                    <input type="text">
+                </div>
+                <div class="form-field">
+                    <label class="field-label">Center ID</label>
+                    <input type="text">
+                </div>
+                <div class="form-field">
+                    <label class="field-label">Initial Justification</label>
+                    <input type="text">
+                </div>
+                <div class="form-field" style="grid-column: span 2;">
+                    <label class="field-label">Product Name</label>
+                    <div style="display: flex; gap: 5px;">
+                        <input type="text" style="flex-grow: 1;">
+                        <button class="select-button">Select</button>
+                    </div>
+                </div>
+                <div class="form-field" style="grid-column: span 2;">
+                    <label class="field-label">Generic Name</label>
+                    <input type="text">
+                </div>
+                <div class="form-field" style="grid-column: span 2;">
+                    <label class="field-label">Description as Reported</label>
+                    <input type="text">
+                </div>
+                <div class="form-field" style="grid-column: span 2;">
+                    <label class="field-label">Onset Date/Time</label>
+                    <input type="text" value="??-???-0000 00:00">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">Reporter</div>
+            <div class="reporter-grid">
+                <div class="form-field">
+                    <label class="field-label">Sal.</label>
+                    <input type="text">
+                </div>
+                <div class="form-field">
+                    <label class="field-label">First Name</label>
+                    <input type="text">
+                </div>
+                <div class="form-field">
+                    <label class="field-label">Middle Name</label>
+                    <input type="text">
+                </div>
+                <div class="form-field">
+                    <label class="field-label">Last Name</label>
+                    <input type="text">
+                </div>
+                <div class="form-field">
+                    <label class="field-label">Suffix</label>
+                    <input type="text">
+                </div>
+                <div class="form-field">
+                    <label class="field-label">Institution</label>
+                    <input type="text">
+                </div>
+                <div class="form-field">
+                    <label class="field-label">Institution ID</label>
+                    <input type="text">
+                </div>
+                <div class="form-field">
+                    <label class="field-label">Department</label>
+                    <input type="text">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">Patient</div>
+            <div class="patient-grid">
+                <div class="form-field">
+                    <label class="field-label">First/Last Name or Initials</label>
+                    <input type="text">
+                </div>
+                <div class="form-field">
+                    <label class="field-label">Pat. ID</label>
+                    <input type="text">
+                </div>
+                <div class="form-field">
+                    <label class="field-label">Date of Birth</label>
+                    <input type="text" value="??-???-0000">
+                </div>
+                <div class="form-field">
+                    <label class="field-label">Age</label>
+                    <input type="text">
+                </div>
+                <div class="form-field">
+                    <label class="field-label">Units</label>
+                    <input type="text">
+                </div>
+                <div class="form-field">
+                    <label class="field-label">Gender</label>
+                    <input type="text">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">Literature Reference</div>
+            <div class="literature-grid">
+                <div class="form-field">
+                    <label class="field-label">ID</label>
+                    <input type="text">
+                </div>
+                <div class="form-field">
+                    <label class="field-label">Keywords</label>
+                    <input type="text">
+                </div>
+                <div class="form-field">
+                    <label class="field-label">Journal</label>
+                    <input type="text">
+                </div>
+                <div class="form-field">
+                    <label class="field-label">Title</label>
+                    <input type="text">
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <input type="checkbox" id="fullSearch">
+            <label for="fullSearch">Full Search (Like, soundex)</label>
+            <button class="select-button">Search</button>
+            <button class="select-button">Continue</button>
+        </div>
+    </div>
+</body>
+</html>
