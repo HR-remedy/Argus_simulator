@@ -3,239 +3,254 @@
 <head>
     <style>
         :root {
-            /* Primary Colors */
-            --oracle-red: #c41e3a;
-            --border-blue: #99b1d8;
-            --header-bg-start: #dde6f4;
-            --header-bg-end: #c3d3e9;
-            
-            /* Background Colors */
-            --main-bg: #f7f7f7;
-            --content-bg: #ffffff;
-            --nav-bg-start: #e8e8e8;
-            --nav-bg-end: #d0d0d0;
-            
-            /* Border Colors */
-            --border-light: #ccd5e4;
-            --border-dark: #8ca1c4;
-            
-            /* Text Colors */
-            --text-primary: #000000;
-            --text-secondary: #333333;
-            --text-disabled: #666666;
-            
-            /* Input Colors */
-            --input-border: #b3c0d6;
-            --input-bg: #ffffff;
-            --input-bg-disabled: #f0f0f0;
-        }
+    /* Enhanced Color Scheme */
+    --oracle-red: #c41e3a;
+    --primary-blue: #1a75ff;
+    --border-blue: #99b1d8;
+    --header-bg-start: #f8f9fa;
+    --header-bg-end: #e9ecef;
+    
+    /* Refined Background Colors */
+    --main-bg: #f8f9fa;
+    --content-bg: #ffffff;
+    --nav-bg-start: #f1f3f5;
+    --nav-bg-end: #e9ecef;
+    
+    /* Improved Border Colors */
+    --border-light: #dee2e6;
+    --border-dark: #8ca1c4;
+    
+    /* Enhanced Text Colors */
+    --text-primary: #212529;
+    --text-secondary: #495057;
+    --text-disabled: #6c757d;
+    
+    /* Refined Input Colors */
+    --input-border: #ced4da;
+    --input-bg: #ffffff;
+    --input-bg-disabled: #e9ecef;
+    
+    /* Button Colors */
+    --button-bg-start: #ffffff;
+    --button-bg-end: #f8f9fa;
+    --button-hover-start: #e9ecef;
+    --button-hover-end: #dee2e6;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--main-bg);
-            font-size: 11px;
-            color: var(--text-primary);
-        }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-bg);
+    font-size: 12px;
+    color: var(--text-primary);
+    line-height: 1.5;
+}
 
-        .header {
-            background: linear-gradient(to bottom, #f8f8f8, #e6e6e6);
-            padding: 6px 8px;
-            border-bottom: 1px solid #b3b3b3;
-            height: 24px;
-            line-height: 24px;
-        }
+.header {
+    background: linear-gradient(to bottom, var(--header-bg-start), var(--header-bg-end));
+    padding: 8px 16px;
+    border-bottom: 1px solid var(--border-light);
+    height: 32px;
+    line-height: 32px;
+}
 
-        .logo {
-            color: var(--oracle-red);
-            font-weight: bold;
-            font-size: 15px;
-        }
+.logo {
+    color: var(--oracle-red);
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+}
 
-        .nav-bar {
-            background: linear-gradient(to bottom, var(--nav-bg-start), var(--nav-bg-end));
-            border-bottom: 1px solid var(--border-dark);
-            height: 28px;
-            padding: 0 4px;
-        }
+.nav-bar {
+    background: linear-gradient(to bottom, var(--nav-bg-start), var(--nav-bg-end));
+    padding: 4px;
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    gap: 2px;
+}
 
-        .case-header {
-            background-color: #e8e8e8;
-            padding: 4px 8px;
-            border: 1px solid var(--border-blue);
-            margin: 4px;
-        }
+.nav-button {
+    background: linear-gradient(to bottom, var(--button-bg-start), var(--button-bg-end));
+    border: 1px solid var(--border-light);
+    border-radius: 3px;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: all 0.2s ease;
+    height: auto;
+    line-height: normal;
+}
 
-        .tab-container {
-            background-color: var(--header-bg-start);
-            padding: 4px 4px 0 4px;
-            border: 1px solid var(--border-blue);
-            border-bottom: none;
-        }
+.nav-button:hover {
+    background: linear-gradient(to bottom, var(--button-hover-start), var(--button-hover-end));
+    border-color: var(--border-dark);
+}
 
-        .tab {
-            display: inline-block;
-            padding: 4px 10px;
-            background: linear-gradient(to bottom, #ffffff, #f0f0f0);
-            border: 1px solid var(--border-blue);
-            margin-right: 2px;
-            border-radius: 3px 3px 0 0;
-        }
+.tab-container {
+    background-color: var(--content-bg);
+    padding: 4px 4px 0 4px;
+    border: 1px solid var(--border-blue);
+    border-bottom: none;
+}
 
-        .tab.active {
-            background: var(--content-bg);
-            border-bottom-color: var(--content-bg);
-        }
+.tab {
+    display: inline-block;
+    padding: 4px 10px;
+    background: linear-gradient(to bottom, var(--button-bg-start), var(--button-bg-end));
+    border: 1px solid var(--border-blue);
+    margin-right: 2px;
+    border-radius: 3px 3px 0 0;
+    cursor: pointer;
+}
 
-        .main-content {
-            background-color: var(--content-bg);
-            margin: 0 4px;
-            border: 1px solid var(--border-blue);
-            padding: 8px;
-        }
+.tab.active {
+    background: var(--content-bg);
+    border-bottom: 1px solid var(--content-bg);
+}
 
-        .section-header {
-            background: linear-gradient(to bottom, var(--header-bg-start), var(--header-bg-end));
-            padding: 4px 8px;
-            border: 1px solid var(--border-blue);
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
+.main-content {
+    background-color: var(--content-bg);
+    margin: 8px;
+    border: 1px solid var(--border-light);
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
 
-        .form-container {
-            border: 1px solid var(--border-blue);
-            padding: 8px;
-            margin-bottom: 12px;
-            background-color: var(--content-bg);
-        }
+.section-header {
+    background: linear-gradient(to bottom, var(--header-bg-start), var(--header-bg-end));
+    padding: 8px 12px;
+    border: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: var(--text-primary);
+    height: auto;
+}
 
-        .form-row {
-            display: grid;
-            grid-template-columns: 120px 200px 120px 200px;
-            gap: 10px;
-            align-items: center;
-            margin-bottom: 6px;
-        }
+.form-container {
+    border: 1px solid var(--border-light);
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+}
 
-        .form-label {
-            color: var(--text-secondary);
-            font-size: 11px;
-        }
+.form-row {
+    display: grid;
+    grid-template-columns: 120px 200px 120px 200px;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 12px;
+}
 
-        .required::after {
-            content: "*";
-            color: #ff0000;
-            margin-left: 2px;
-        }
+.form-label {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
 
-        .form-input {
-            height: 18px;
-            border: 1px solid var(--input-border);
-            padding: 1px 4px;
-            width: calc(100% - 10px);
-            background-color: var(--input-bg);
-        }
+.form-input {
+    height: 24px;
+    border: 1px solid var(--input-border);
+    padding: 4px 8px;
+    width: 100%;
+    font-size: 12px;
+    border-radius: 3px;
+}
 
-        .form-select {
-            height: 22px;
-            border: 1px solid var(--input-border);
-            width: 100%;
-            background-color: var(--input-bg);
-        }
+.form-select {
+    height: 32px;
+    border: 1px solid var(--input-border);
+    width: 100%;
+    font-size: 12px;
+    padding: 4px;
+    border-radius: 3px;
+}
 
-        .button {
-            background: linear-gradient(to bottom, #ffffff, #e6e6e6);
-            border: 1px solid var(--border-blue);
-            padding: 2px 8px;
-            height: 20px;
-            color: var(--text-primary);
-        }
+.grid-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    background-color: var(--content-bg);
+}
 
-        .grid-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 8px 0;
-        }
+.grid-table th {
+    background: linear-gradient(to bottom, var(--header-bg-start), var(--header-bg-end));
+    padding: 8px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-light);
+}
 
-        .grid-table th {
-            background: linear-gradient(to bottom, var(--header-bg-start), var(--header-bg-end));
-            border: 1px solid var(--border-blue);
-            padding: 4px;
-            text-align: left;
-            font-weight: normal;
-            color: var(--text-secondary);
-        }
+.grid-table td {
+    padding: 8px;
+    border: 1px solid var(--border-light);
+    color: var(--text-secondary);
+}
 
-        .grid-table td {
-            border: 1px solid var(--border-blue);
-            padding: 2px;
-            background-color: var(--content-bg);
-        }
+.button {
+    background: linear-gradient(to bottom, var(--button-bg-start), var(--button-bg-end));
+    border: 1px solid var(--border-light);
+    border-radius: 3px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    height: auto;
+    font-size: 12px;
+}
 
-        .amendments-header {
-            background: linear-gradient(to bottom, var(--header-bg-start), var(--header-bg-end));
-            padding: 4px 8px;
-            border: 1px solid var(--border-blue);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: bold;
-        }
+.button:hover {
+    background: linear-gradient(to bottom, var(--button-hover-start), var(--button-hover-end));
+    border-color: var(--border-dark);
+}
 
-        .nav-button {
-            display: inline-block;
-            padding: 4px 12px;
-            border-right: 1px solid #b3b3b3;
-            height: 20px;
-            line-height: 20px;
-            color: var(--text-secondary);
-        }
+.checkbox-container {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
 
-        .checkbox-container {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+}
 
-        .checkbox-label {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            color: var(--text-secondary);
-        }
+.amendments-header {
+    background: linear-gradient(to bottom, var(--header-bg-start), var(--header-bg-end));
+    padding: 8px 12px;
+    border: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px 4px 0 0;
+}
 
-        /* Additional precise styling for specific elements */
-        input[type="checkbox"] {
-            width: 13px;
-            height: 13px;
-            border: 1px solid var(--input-border);
-            background-color: var(--input-bg);
-        }
-
-        select:disabled {
-            background-color: var(--input-bg-disabled);
-            color: var(--text-disabled);
-        }
-
-        .button:hover {
-            background: linear-gradient(to bottom, #f0f0f0, #d9d9d9);
-        }
-
-        .button:active {
-            background: linear-gradient(to bottom, #d9d9d9, #f0f0f0);
-        }
+.case-header {
+    padding: 8px 12px;
+    background-color: var(--header-bg-end);
+    border: 1px solid var(--border-light);
+    margin: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+}
     </style>
 </head>
 <body>
     <div class="header">
-        <div class="logo">
-            ORACLE Argus Safety
-        </div>
-        <div class="welcome-text">
-            Welcome Faculty, Sunday, October 4, 2020 (ARGUS-DB-DEFAULT)
-        </div>
+        <span class="logo">ORACLE</span>
+        <span style="margin-left: 20px">Argus Safety</span>
+        <span style="float: right">Welcome Booklin and Date&time: Sunday, November 1, 2020 [ARGUS SUB-DEFAULT]</span>
     </div>
+
     
     <div class="nav">
         <button class="nav-button">Active Cases</button>
