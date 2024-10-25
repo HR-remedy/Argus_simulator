@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Form - Data Entry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f1f1f1;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        header .left {
+            display: flex;
+            align-items: center;
+        }
+        header .left img {
+            height: 30px;
+        }
+        header .right {
+            display: flex;
+            align-items: center;
+        }
+        nav {
+            background-color: #004c8c;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        nav a {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1 {
+            font-size: 18px;
+            color: #333;
+        }
+        .tab-menu {
+            margin-bottom: 10px;
+        }
+        .tab-menu ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+        .tab-menu ul li {
+            padding: 10px;
+            margin-right: 5px;
+            background-color: #e9e9e9;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .form-section {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        input, select {
+            width: 100%;
+            padding: 5px;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+        .checkbox-group input {
+            margin-right: 5px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .buttons button {
+            margin-left: 10px;
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="left">
+        <img src="oracle_logo.png" alt="Oracle">
+        <h3>Argus Safety 8.1.1</h3>
+    </div>
+    <div class="right">
+        <span>Welcome Bookin and Datentry, Sunday, November 1, 2020 (ARGUSDB-DEFAULT)</span>
+        <a href="#">Home</a>
+        <a href="#">Help</a>
+        <a href="#">Logout</a>
+    </div>
+</header>
+
+<nav>
+    <a href="#">Active Cases</a>
+    <a href="#">Worklist</a>
+    <a href="#">Case Actions</a>
+    <a href="#">Utilities</a>
+    <a href="#">Dashboards</a>
+</nav>
+
+<div class="container">
+    <h1>Case Form - 20US000973</h1>
+    <div class="tab-menu">
+        <ul>
+            <li>General</li>
+            <li>Patient</li>
+            <li>Products</li>
+            <li>Events</li>
+            <li>Analysis</li>
+            <li>Additional Information</li>
+            <li>Regulatory Reports</li>
+        </ul>
+    </div>
+
+    <div class="form-section">
+        <h2>Patient Information</h2>
+        <table>
+            <tr>
+                <td>Title</td>
+                <td><input type="text" name="title"></td>
+                <td>First Name</td>
+                <td><input type="text" name="first_name"></td>
+                <td>MI</td>
+                <td><input type="text" name="mi"></td>
+                <td>Last Name</td>
+                <td><input type="text" name="last_name"></td>
+                <td>Initials</td>
+                <td><input type="text" name="initials"></td>
+            </tr>
+            <tr>
+                <td colspan="5" class="checkbox-group">
+                    <input type="checkbox" name="protect_confidentiality"> Protect Confidentiality
+                    <input type="checkbox" name="child_case"> Child Only Case
+                </td>
+            </tr>
+            <tr>
+                <td>Address 1</td>
+                <td colspan="3"><input type="text" name="address_1"></td>
+                <td>City</td>
+                <td><input type="text" name="city"></td>
+                <td>State</td>
+                <td><input type="text" name="state"></td>
+            </tr>
+            <!-- Continue adding fields as per the screenshot -->
+        </table>
+    </div>
+
+    <div class="form-section">
+        <h2>Patient Details</h2>
+        <table>
+            <tr>
+                <td>Date of Birth</td>
+                <td><input type="text" name="dob"></td>
+                <td>Age</td>
+                <td><input type="text" name="age"></td>
+                <td>Height</td>
+                <td><input type="text" name="height"></td>
+                <td>Weight</td>
+                <td><input type="text" name="weight"></td>
+            </tr>
+            <!-- Continue adding fields as per the screenshot -->
+        </table>
+    </div>
+
+    <div class="buttons">
+        <button>Copy</button>
+        <button>Add</button>
+        <button>Delete</button>
+        <button>Up</button>
+        <button>Down</button>
+    </div>
+
+</div>
+
+</body>
+</html>
