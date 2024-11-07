@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #c00000;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-bar {
+            background-color: #e0e0e0;
+            padding: 5px;
+            display: flex;
+            font-size: 14px;
+            border-bottom: 2px solid #b0b0b0;
+        }
+        .nav-button {
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+        .main-content {
+            padding: 20px;
+            background-color: white;
+        }
+        .case-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .tab-bar {
+            display: flex;
+            font-size: 14px;
+            background-color: #f0f0f0;
+            border-bottom: 2px solid #b0b0b0;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .selected {
+            background-color: #ffffff;
+            border-bottom: 2px solid #c00000;
+            font-weight: bold;
+        }
+        .section {
+            border: 1px solid #d0d0d0;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .section-header {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .event-info, .event-coding {
+            display: grid;
+            grid-template-columns: 200px 1fr 100px;
+            grid-gap: 10px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .event-info label, .event-coding label {
+            font-weight: bold;
+            align-self: center;
+        }
+        .event-info input[type="text"], .event-coding input[type="text"], select {
+            padding: 5px;
+            border: 1px solid #d0d0d0;
+            width: 100%;
+        }
+        .event-info button {
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+        }
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        .table-section {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        th, td {
+            padding: 5px;
+            border: 1px solid #d0d0d0;
+            text-align: left;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="logo">ORACLE</span>
+        <span style="margin-left: 20px">Argus Safety</span>
+        <span style="float: right">Welcome Bookin and Dataentry, Sunday, November 1, 2020 (ARGUSDB-DEFAULT)</span>
+    </div>
+
+    <div class="nav-bar">
+        <div class="nav-button">Active Cases</div>
+        <div class="nav-button">Worklist</div>
+        <div class="nav-button">Case Actions</div>
+        <div class="nav-button">Utilities</div>
+        <div class="nav-button">Dashboards</div>
+    </div>
+
+    <div class="main-content">
+        <div class="case-header">
+            <h2>Case Form - 20US000973 "B-S"</h2>
+            <span>Case Status: Data Entry</span>
+        </div>
+
+        <div class="tab-bar">
+            <div class="tab">General</div>
+            <div class="tab">Patient</div>
+            <div class="tab">Products</div>
+            <div class="tab selected">Events</div>
+            <div class="tab">Analysis</div>
+            <div class="tab">Activities</div>
+            <div class="tab">Additional Information</div>
+            <div class="tab">Regulatory Reports</div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">Event Information</div>
+
+            <div class="event-info">
+                <label>Description as Reported</label>
+                <input type="text" value="Fibrillation Atrial">
+                <span><button>Encode</button></span>
+
+                <label>Description to be Coded</label>
+                <input type="text" value="Fibrillation Atrial">
+                <span></span>
+
+                <label>Original Language</label>
+                <select>
+                    <option>English</option>
+                </select>
+
+                <label>Diagnosis</label>
+                <input type="radio" name="diag-symptom"> Diagnosis
+                <input type="radio" name="diag-symptom"> Symptoms
+
+                <label>Medical Confirmation by HCP</label>
+                <select></select>
+            </div>
+
+            <div class="section-header">Event Coding</div>
+
+            <div class="event-coding">
+                <label>System Organ Class (SOC)</label>
+                <input type="text" value="Cardiac disorders (10007541)">
+
+                <label>High Level Group Term (Code)</label>
+                <input type="text" value="Cardiac arrhythmias (10007521)">
+
+                <label>High Level Term (Code)</label>
+                <input type="text" value="Supraventricular arrhythmias (10042600)">
+
+                <label>Preferred Term (Code)</label>
+                <input type="text" value="Atrial fibrillation (10003658)">
+
+                <label>Lower Level Term (Code)</label>
+                <input type="text" value="Fibrillation atrial (10016566)">
+            </div>
+
+            <div class="checkbox-group">
+                <label><input type="checkbox"> Death</label>
+                <label><input type="checkbox"> Hospitalized</label>
+                <label><input type="checkbox"> Disability</label>
+                <label><input type="checkbox"> Life-threatening</label>
+                <label><input type="checkbox"> Medically Significant</label>
+                <label><input type="checkbox"> Intervention Required</label>
+                <label><input type="checkbox"> Congenital Anomaly</label>
+                <label><input type="checkbox"> Lack of Efficacy</label>
+                <label><input type="checkbox"> Infection</label>
+                <label><input type="checkbox"> Progression of Disease</label>
+                <label><input type="checkbox"> Adverse Drug Withdrawal Reaction</label>
+                <label><input type="checkbox"> Emergency Room Visit</label>
+                <label><input type="checkbox"> Physician Office Visit</label>
+            </div>
+
+            <div class="table-section">
+                <h3>Details</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nature of Event</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td></td>
+                            <td><button>Add</button> <button>Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

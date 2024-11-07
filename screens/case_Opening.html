@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Argus Safety - Case Open</title>
+    <link rel="stylesheet" href="css/pageStyles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <span class="logo">ORACLE</span>
+        <span style="margin-left: 20px">Argus Safety</span>
+        <span style="float: right">Welcome Faculty, Sunday, October 4, 2020 [ARGUSDB-DEFAULT]</span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <div class="nav-button">Active Cases</div>
+        <div class="nav-button">Worklist</div>
+        <div class="nav-button">Case Actions</div>
+        <div class="nav-button">Reports</div>
+        <div class="nav-button">Local Affiliate</div>
+        <div class="nav-button">Utilities</div>
+        <div class="nav-button">Dashboards</div>
+        <div class="nav-button">Argus Console</div>
+    </div>
+
+    <!-- Case Open Section -->
+    <div class="case-search-section">
+        <h2>Case Open</h2>
+        <div class="search-criteria">
+            <div class="search-row">
+                <label for="searchFor">Search For</label>
+                <select id="searchFor">
+                    <option>Case #</option>
+                </select>
+                <input type="text" placeholder="1SU000957" id="caseNumber">
+            </div>
+            <div class="search-row">
+                <label for="productFamily">Product Family</label>
+                <select id="productFamily">
+                    <option>All Products</option>
+                </select>
+            </div>
+            <div class="search-row">
+                <label>Date Range</label>
+                <select>
+                    <option>Custom Date Range</option>
+                </select>
+                <label>From</label>
+                <input type="date" value="2020-09-04">
+                <label>To</label>
+                <input type="date" value="2999-01-01">
+            </div>
+            <div class="search-row">
+                <input type="checkbox" id="fullSearch">
+                <label for="fullSearch">Full Search (Like, soundex)</label>
+                <button>Search</button>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="results-section">
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Lock State</th>
+                        <th>Case #</th>
+                        <th>Date</th>
+                        <th>Product</th>
+                        <th>State</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="lock-icon.png" alt="Lock Icon"></td>
+                        <td>1SU000957</td>
+                        <td>09-JUN-2015</td>
+                        <td>Minocycline</td>
+                        <td>Data Entry</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

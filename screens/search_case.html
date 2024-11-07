@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/pageStyles.css">
+</head>
+<body>
+    <div class="header">
+        <span class="logo">ORACLE</span>
+        <span style="margin-left: 20px">Argus Safety</span>
+        <span style="float: right">Welcome Faculty, Sunday, October 4, 2020 (ARGUSDB-DEFAULT)</span>
+    </div>
+
+    <div class="nav-bar">
+        <div class="nav-button">Active Cases</div>
+        <div class="nav-button">Worklist</div>
+        <div class="nav-button">Case Actions</div>
+        <div class="nav-button">Reports</div>
+        <div class="nav-button">Local Affiliate</div>
+        <div class="nav-button">Utilities</div>
+        <div class="nav-button">Dashboards</div>
+        <div class="nav-button">Argus Console</div>
+    </div>
+
+    <div class="main-content">
+        <div class="search-criteria">
+            <div class="search-row">
+                <label class="form-label">Filter</label>
+                <select class="form-select">
+                    <option>Case Number</option>
+                </select>
+                <input type="text" class="form-input" value="20US000917">
+                <button class="button">Search</button>
+            </div>
+            <div class="search-row">
+                <label>
+                    <input type="checkbox">
+                    Only view locked Cases requiring Follow-up
+                </label>
+            </div>
+        </div>
+
+        <div class="results-section">
+            <div class="section-header">
+                <span>Total Number of Rows (1)</span>
+            </div>
+
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Lock State</th>
+                        <th>Priority</th>
+                        <th>SUSAR</th>
+                        <th>Receipt Date<br>Aware Date</th>
+                        <th>Days Open/Remaining</th>
+                        <th>Case Number<br>Workflow State / Group</th>
+                        <th>Product Name<br>Generic Name</th>
+                        <th>Event PT<br>Event Verbatim</th>
+                        <th>S/U/R<br>F, LT or H</th>
+                        <th>Case Type<br>Study ID</th>
+                        <th>Reporter Type<br>Country</th>
+                        <th>Assigned To<br>Owner</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Initial</td>
+                        <td>7</td>
+                        <td>Yes</td>
+                        <td>04-Jan-2020<br>04-Jan-2020</td>
+                        <td>274<br>0</td>
+                        <td><a href="#">20US000917</a><br>Book-In</td>
+                        <td>ALPROSTADIL TAB<br>ALPROSTADIL</td>
+                        <td>Encephalitis<br>Encephalitis</td>
+                        <td><a href="#">Yes/No</a></td>
+                        <td>Post Marketing Surv.<br>AMS-Study1</td>
+                        <td>Consumer<br>US</td>
+                        <td>(Unassigned)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

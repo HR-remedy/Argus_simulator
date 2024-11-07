@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Open - Oracle Argus Safety</title>
+    <link rel="stylesheet" href="css/pageStyles.css">
+    <style>
+        /* Additional CSS specific to the "Case Open" page */
+
+        /* Page Header */
+        .header-bar {
+            background: linear-gradient(to bottom, #ffffff, #e6e6e6);
+            border-bottom: 1px solid #b3b3b3;
+            padding: 6px 8px;
+            height: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            background: linear-gradient(to bottom, #f0f0f0, #d9d9d9);
+            height: 28px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+        }
+        .nav-button {
+            padding: 6px 12px;
+            border-right: 1px solid #b3b3b3;
+            font-size: 11px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Case Search Criteria */
+        .search-criteria {
+            background-color: #e6edf7;
+            border: 1px solid #9cb0d1;
+            padding: 8px;
+            margin-top: 10px;
+        }
+        .search-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .search-label {
+            margin-right: 10px;
+            font-size: 11px;
+        }
+        .search-input, .search-select {
+            border: 1px solid #9cb0d1;
+            padding: 2px 4px;
+            font-size: 11px;
+        }
+        .search-button {
+            background: linear-gradient(to bottom, #ffffff, #e6e6e6);
+            border: 1px solid #9cb0d1;
+            padding: 2px 8px;
+            font-size: 11px;
+            cursor: pointer;
+        }
+
+        /* Results Table */
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 11px;
+        }
+        .results-table th, .results-table td {
+            border: 1px solid #9cb0d1;
+            padding: 4px;
+            text-align: left;
+        }
+        .results-table th {
+            background-color: #e6edf7;
+            color: #333;
+        }
+
+        /* Footer Pagination */
+        .pagination {
+            display: flex;
+            align-items: center;
+            margin-top: 8px;
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header-bar">
+    <span class="logo">ORACLE</span>
+    <span>DEFAULT - Argus Safety 8.1.1</span>
+    <div class="header-right">
+        <span>Welcome Faculty, Sunday, October 4, 2020 (ARGUSDB-DEFAULT)</span>
+        
+    </div>
+</div>
+
+<div class="nav-bar">
+    <div class="nav-button">Active Cases</div>
+    <div class="nav-button">Worklist</div>
+    <div class="nav-button">Case Actions</div>
+    <div class="nav-button">Reports</div>
+    <div class="nav-button">Local Affiliate</div>
+    <div class="nav-button">Utilities</div>
+    <div class="nav-button">Dashboards</div>
+    <div class="nav-button">Argus Console</div>
+</div>
+
+<div class="search-criteria">
+    <div class="section-header">Case Open</div>
+    <div class="search-row">
+        <label class="search-label">Search For</label>
+        <select class="search-select">
+            <option>Case #</option>
+        </select>
+        <input class="search-input" type="text" placeholder="%">
+        <label class="search-label">Date Range</label>
+        <select class="search-select">
+            <option>Last 30 Days</option>
+        </select>
+        <label class="search-label">From</label>
+        <input class="search-input" type="date">
+        <label class="search-label">To</label>
+        <input class="search-input" type="date">
+        <button class="search-button">Search</button>
+    </div>
+</div>
+
+<table class="results-table">
+    <thead>
+        <tr>
+            <th>Lock State</th>
+            <th>Case #</th>
+            <th>Date</th>
+            <th>Product</th>
+            <th>State</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>02IN000944</td>
+            <td>01-MAY-2002</td>
+            <td>Aceclofenac 5mg</td>
+            <td>Book-In</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>04ZA000853</td>
+            <td>24-SEP-2004</td>
+            <td>Atorvastatin</td>
+            <td>Data Entry</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>07US000851</td>
+            <td>01-FEB-2007</td>
+            <td>ALPROSTADIL</td>
+            <td>Book-In</td>
+        </tr>
+        <!-- Add more rows as needed to match the screenshot -->
+    </tbody>
+</table>
+
+<div class="pagination">
+    <span>Displaying Rows 1-100 of 954</span>
+    <span>Page Size</span>
+    <select class="search-select">
+        <option>100</option>
+    </select>
+</div>
+
+</body>
+</html>

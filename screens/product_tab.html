@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #c00000;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-bar {
+            background-color: #e0e0e0;
+            padding: 5px;
+            display: flex;
+            font-size: 14px;
+            border-bottom: 2px solid #b0b0b0;
+        }
+        .nav-button {
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+        .main-content {
+            padding: 20px;
+            background-color: white;
+        }
+        .case-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .tab-bar {
+            display: flex;
+            font-size: 14px;
+            background-color: #f0f0f0;
+            border-bottom: 2px solid #b0b0b0;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .selected {
+            background-color: #ffffff;
+            border-bottom: 2px solid #c00000;
+            font-weight: bold;
+        }
+        .product-section {
+            border: 1px solid #d0d0d0;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .product-header {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .radio-buttons label {
+            margin-right: 15px;
+            font-size: 14px;
+        }
+        .product-info {
+            display: grid;
+            grid-template-columns: 150px 1fr 100px;
+            grid-gap: 10px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .product-info label {
+            align-self: center;
+            font-weight: bold;
+        }
+        .product-info input[type="text"] {
+            padding: 5px;
+            border: 1px solid #d0d0d0;
+            width: 100%;
+        }
+        .product-info button {
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .product-info select {
+            padding: 5px;
+            border: 1px solid #d0d0d0;
+        }
+        .product-info input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        .substance-info, .product-indication {
+            margin-top: 20px;
+        }
+        .substance-info h3, .product-indication h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        th, td {
+            padding: 5px;
+            border: 1px solid #d0d0d0;
+            text-align: left;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="logo">ORACLE</span>
+        <span style="margin-left: 20px">Argus Safety</span>
+        <span style="float: right">Welcome Bookin and Dataentry, Sunday, November 1, 2020 (ARGUSDB-DEFAULT)</span>
+    </div>
+
+    <div class="nav-bar">
+        <div class="nav-button">Active Cases</div>
+        <div class="nav-button">Worklist</div>
+        <div class="nav-button">Case Actions</div>
+        <div class="nav-button">Utilities</div>
+        <div class="nav-button">Dashboards</div>
+    </div>
+
+    <div class="main-content">
+        <div class="case-header">
+            <h2>Case Form - 20US000973 "B-S"</h2>
+            <span>Case Status: Data Entry</span>
+        </div>
+
+        <div class="tab-bar">
+            <div class="tab">General</div>
+            <div class="tab">Patient</div>
+            <div class="tab selected">Products</div>
+            <div class="tab">Events</div>
+            <div class="tab">Analysis</div>
+            <div class="tab">Activities</div>
+            <div class="tab">Additional Information</div>
+            <div class="tab">Regulatory Reports</div>
+        </div>
+
+        <div class="product-section">
+            <div class="product-header">
+                <span>CHLORPROMAZINE TAB</span>
+                <span>(New)</span>
+            </div>
+
+            <div class="radio-buttons">
+                <label><input type="radio" name="drug-type"> Suspect</label>
+                <label><input type="radio" name="drug-type"> Concomitant</label>
+                <label><input type="radio" name="drug-type"> Treatment</label>
+            </div>
+
+            <div class="product-info">
+                <label>Product Name</label>
+                <input type="text" value="CHLORPROMAZINE TAB">
+                <button>Select</button>
+                <button>Encode</button>
+
+                <label>Generic Name</label>
+                <input type="text" value="CHLORPROMAZINE HIBENZATE, CHLORPROMAZINE HYDROCHLORIDE">
+
+                <label>Product Identifier Type</label>
+                <input type="text">
+
+                <label>Product Identifier</label>
+                <input type="text">
+
+                <label>Version</label>
+                <input type="text">
+
+                <label>Company Drug Code</label>
+                <input type="text">
+
+                <label>Obtain Drug Country</label>
+                <input type="text" value="UNITED STATES">
+
+                <label>Drug Authorization Country</label>
+                <input type="text" value="UNITED STATES">
+
+                <label>Drug Code</label>
+                <input type="text" value="00011902024">
+
+                <label>WHO Medicinal Product ID</label>
+                <input type="text">
+
+                <label>Manufacturer</label>
+                <input type="text">
+
+                <label>Formulation</label>
+                <input type="text" value="Tablet">
+
+                <label>Concentration</label>
+                <input type="text" value="20">
+                <label>Units</label>
+                <input type="text" value="milligram">
+
+                <label>Interaction?</label>
+                <select>
+                    <option></option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+
+                <label>Contraindicated?</label>
+                <input type="checkbox">
+                <label>Drug Not Administered</label>
+                <input type="checkbox">
+            </div>
+
+            <div class="substance-info">
+                <h3>Substance Information (2)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Substance Name</th>
+                            <th>Substance Term ID</th>
+                            <th>Version</th>
+                            <th>Strength</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>CHLORPROMAZINE HYDR</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>CHLORPROMAZINE HIBENZ</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="product-indication">
+                <h3>Product Indication (0)</h3>
+                <label><input type="checkbox"> Reported Indication</label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
